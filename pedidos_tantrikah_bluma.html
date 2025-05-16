@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedidos Tantrikah Boutique</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffe0e9, #fff0f5);
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .hero {
+      background: linear-gradient(to right, #fc5c7d, #6a82fb);
+      color: white;
+    }
+    .box {
+      background: #fffafd;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .button.is-primary {
+      background: linear-gradient(to right, #fc466b, #3f5efb);
+      border: none;
+      color: white;
+    }
+    .button.is-primary:hover {
+      background: linear-gradient(to right, #f441a5, #03a9f4);
+    }
+    footer {
+      background: linear-gradient(to right, #fc5c7d, #6a82fb);
+      padding: 1rem;
+      text-align: center;
+    }
+    footer a {
+      color: white;
+      margin: 0 1rem;
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero is-medium is-bold">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-3">
+          📅 No dejes para mañana el pedido que puedes hacer hoy
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="box">
+        <form id="pedidoForm">
+          <div class="field">
+            <label class="label"><i class="fas fa-user"></i> Nombre completo</label>
+            <div class="control">
+              <input class="input" type="text" id="nombre" placeholder="Ingresa tu nombre" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label"><i class="fas fa-tshirt"></i> Tipo de prenda</label>
+            <div class="control">
+              <div class="select is-fullwidth">
+                <select id="tipoPrenda" required>
+                  <option value="">Selecciona una prenda</option>
+                  <option value="Palazzo">Palazzo</option>
+                  <option value="Vestido">Vestido</option>
+                  <option value="Blusa">Blusa</option>
+                  <option value="Pantalón">Pantalón</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label"><i class="fas fa-palette"></i> Color de la prenda</label>
+            <div class="control">
+              <input class="input" type="text" id="color" placeholder="Ej. Rosa, Azul, Blanco..." required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label"><i class="fas fa-map-marker-alt"></i> Colonia y Alcaldía de Entrega</label>
+            <div class="control">
+              <input class="input" type="text" id="direccion" placeholder="Ej. Del Valle, Benito Juárez" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label"><i class="fas fa-phone"></i> Número de teléfono</label>
+            <div class="control">
+              <input class="input" type="tel" id="telefono" placeholder="55 1234 5678" pattern="[0-9]{10}" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <button class="button is-primary is-fullwidth" type="submit">✨ Realiza tu pedido ✨</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="https://facebook.com/TantrikahBoutique" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://wa.me/5215579015071" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </footer>
+
+  <script>
+    document.getElementById('pedidoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+      const tipo = document.getElementById('tipoPrenda').value;
+      const color = document.getElementById('color').value;
+      const direccion = document.getElementById('direccion').value;
+      const telefono = document.getElementById('telefono').value;
+
+      console.log("Pedido recibido:");
+      console.log("Nombre:", nombre);
+      console.log("Tipo de prenda:", tipo);
+      console.log("Color:", color);
+      console.log("Dirección:", direccion);
+      console.log("Teléfono:", telefono);
+
+      alert('¡Gracias por tu pedido! Pronto nos pondremos en contacto 💖');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
